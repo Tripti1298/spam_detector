@@ -1,0 +1,116 @@
+/* Full reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    background: linear-gradient(135deg, #ff5f6d, #ffc371);
+    background-size: 300% 300%;
+    animation: bgAnimation 10s ease infinite;
+}
+
+/* Background animation */
+@keyframes bgAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Animated container with slide-in */
+.container {
+    width: 90%;
+    max-width: 500px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: slideIn 1s ease-out;
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header */
+h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ff5f6d;
+    margin-bottom: 20px;
+}
+
+/* Textarea styling */
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ff5f6d;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #333;
+    background: #f9f9f9;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+}
+
+textarea:focus {
+    border-color: #ff5f6d;
+    outline: none;
+}
+
+/* Button with pop animation on click */
+button {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(90deg, #ff5f6d, #ffc371);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:disabled {
+    background: #ddd;
+    cursor: not-allowed;
+}
+
+/* Result message with fade-in */
+#result {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ff5f6d;
+    opacity: 0;
+    animation: fadeInResult 0.8s ease forwards;
+    animation-delay: 0.5s;
+}
+
+/* Fade-in for result message */
+@keyframes fadeInResult {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
